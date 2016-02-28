@@ -1,4 +1,4 @@
-package shjeong.springlab.beaninit;
+package shjeong.springlab.protobean.acaware;
 
 public interface CustomerRequestDao {
 

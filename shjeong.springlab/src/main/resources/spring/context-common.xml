@@ -5,13 +5,13 @@
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     	
     	<bean id="customerRequestDetails"
-    	   class="shjeong.springlab.beaninit.CustomerRequestDetails" scope="prototype" />
+    	   class="shjeong.springlab.protobean.acaware.CustomerRequestDetails" scope="prototype" />
     	
     	<bean id="customerRequestDao"
-    	   class="shjeong.springlab.beaninit.CustomerRequestDaoImpl" />
+    	   class="shjeong.springlab.protobean.acaware.CustomerRequestDaoImpl" />
     	
     	<bean id="customerRequestService"
-    	   class="shjeong.springlab.beaninit.CustomerRequestServiceContextAwareImpl">
+    	   class="shjeong.springlab.protobean.acaware.CustomerRequestServiceContextAwareImpl">
             <constructor-arg name="customerRequestDao" ref="customerRequestDao" />
     	</bean>
     	    	
