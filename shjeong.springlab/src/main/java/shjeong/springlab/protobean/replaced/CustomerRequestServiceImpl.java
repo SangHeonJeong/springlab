@@ -5,9 +5,8 @@ import java.beans.ConstructorProperties;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import shjeong.springlab.protobean.replaced.CustomerRequestDao;
-import shjeong.springlab.protobean.replaced.CustomerRequestDetails;
-import shjeong.springlab.protobean.replaced.CustomerRequestService;
+import shjeong.springlab.protobean.cmmn.CustomerRequestDao;
+import shjeong.springlab.protobean.cmmn.CustomerRequestDetails;
 
 public class CustomerRequestServiceImpl implements CustomerRequestService {
     

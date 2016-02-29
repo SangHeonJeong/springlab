@@ -1,4 +1,4 @@
-package shjeong.springlab.protobean.acaware;
+package shjeong.springlab.protobean.cmmn;
 
 public class CustomerRequestDetails {
     

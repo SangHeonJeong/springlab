@@ -4,11 +4,10 @@
 	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd">
     	
-    	<import resource="context-cmmn.xml"/>
+    	<bean id="customerRequestDetails"
+    	   class="shjeong.springlab.protobean.cmmn.CustomerRequestDetails" scope="prototype" />
     	
-    	<bean id="customerRequestService"
-    	   class="shjeong.springlab.protobean.acaware.CustomerRequestServiceContextAwareImpl">
-            <constructor-arg name="customerRequestDao" ref="customerRequestDao" />
-    	</bean>
+    	<bean id="customerRequestDao"
+    	   class="shjeong.springlab.protobean.cmmn.CustomerRequestDaoImpl" />
     	    	
 </beans>

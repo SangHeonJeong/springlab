@@ -1,4 +1,4 @@
-package shjeong.springlab.protobean.replaced;
+package shjeong.springlab.protobean.cmmn;
 
 public interface CustomerRequestDao {
 

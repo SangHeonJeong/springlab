@@ -7,6 +7,9 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
+import shjeong.springlab.protobean.cmmn.CustomerRequestDao;
+import shjeong.springlab.protobean.cmmn.CustomerRequestDetails;
+
 /**
  * <pre>
  * ApplicationContextAware 인터페이스는 setApplicationContext(ApplicationContext applicationContext) 메소드를 제공하다.
