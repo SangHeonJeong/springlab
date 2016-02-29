@@ -1,15 +1,15 @@
-package shjeong.springlab.protobean.lookup;
+package shjeong.springlab.protobean.replaced;
 
 import java.beans.ConstructorProperties;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
 
-import shjeong.springlab.protobean.lookup.CustomerRequestDao;
-import shjeong.springlab.protobean.lookup.CustomerRequestDetails;
-import shjeong.springlab.protobean.lookup.CustomerRequestService;
+import shjeong.springlab.protobean.replaced.CustomerRequestDao;
+import shjeong.springlab.protobean.replaced.CustomerRequestDetails;
+import shjeong.springlab.protobean.replaced.CustomerRequestService;
 
-public abstract class CustomerRequestServiceImpl implements CustomerRequestService {
+public class CustomerRequestServiceImpl implements CustomerRequestService {
     
     private CustomerRequestDao customerRequestDao;
     
@@ -19,23 +19,20 @@ public abstract class CustomerRequestServiceImpl implements CustomerRequestServi
         System.out.println("CustomerRequestServiceContextAwareImpl Constructor");
     }
     
-    /**
-     * prototype bean을 가져올 메소드를 abstract로 선언한다 (abstract로 하지 않아도 된다).
-     *
-     * @return the customer request details
-     */
-    public abstract CustomerRequestDetails getCustomerRequestDetails();
-    
+    public Object getByBean(String beanName) {
+        return null;
+    }
+        
     @Override
     public void submitRequest(String requestType, String requestDescription) {
-        CustomerRequestDetails customerRequestDetails = getCustomerRequestDetails();
+        CustomerRequestDetails customerRequestDetails = (CustomerRequestDetails)getByBean("customerRequestDetails");
         customerRequestDetails.setRequestType(requestType);
         customerRequestDetails.setRequestDescription(requestDescription);
         customerRequestDao.submitRequest(customerRequestDetails);
     }
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/context-lookup.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/context-replaced.xml");
         CustomerRequestService customerRequestService = context.getBean("customerRequestService", CustomerRequestService.class);
         customerRequestService.submitRequest("test1", "test2");
     }
