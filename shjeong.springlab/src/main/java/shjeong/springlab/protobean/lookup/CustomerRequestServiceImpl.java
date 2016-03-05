@@ -25,6 +25,9 @@ public abstract class CustomerRequestServiceImpl implements CustomerRequestServi
      */
     public abstract CustomerRequestDetails getCustomerRequestDetails();
     
+    /* (non-Javadoc)
+     * @see shjeong.springlab.protobean.lookup.CustomerRequestService#submitRequest(java.lang.String, java.lang.String)
+     */
     @Override
     public void submitRequest(String requestType, String requestDescription) {
         CustomerRequestDetails customerRequestDetails = getCustomerRequestDetails();
@@ -34,7 +37,7 @@ public abstract class CustomerRequestServiceImpl implements CustomerRequestServi
     }
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/context-lookup.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/protobean/context-lookup.xml");
         CustomerRequestService customerRequestService = context.getBean("customerRequestService", CustomerRequestService.class);
         customerRequestService.submitRequest("test1", "test2");
     }

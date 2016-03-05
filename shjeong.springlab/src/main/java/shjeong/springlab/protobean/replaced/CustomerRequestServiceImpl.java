@@ -31,7 +31,7 @@ public class CustomerRequestServiceImpl implements CustomerRequestService {
     }
 
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/context-replaced.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/protobean/context-replaced.xml");
         CustomerRequestService customerRequestService = context.getBean("customerRequestService", CustomerRequestService.class);
         customerRequestService.submitRequest("test1", "test2");
     }

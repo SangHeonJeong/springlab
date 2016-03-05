@@ -72,7 +72,7 @@ public class CustomerRequestServiceContextAwareImpl implements CustomerRequestSe
      */
     @SuppressWarnings("resource")
     public static void main(String[] args) {
-        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/context-acaware.xml");
+        ApplicationContext context = new ClassPathXmlApplicationContext("classpath:spring/protobean/context-acaware.xml");
         CustomerRequestService customerRequestService = context.getBean("customerRequestService", CustomerRequestService.class);
         customerRequestService.submitRequest("test1", "test2");
     }
